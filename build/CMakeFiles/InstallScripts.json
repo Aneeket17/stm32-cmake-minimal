@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
