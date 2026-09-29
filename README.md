@@ -1,10 +1,10 @@
 # Minimal STM32 CMAKE Project
 
-This project is for sstting up a minimal flashable stm32 project
+This project is for setting up a minimal flashable stm32 project.
 
 # Steps followed for creation of the project
 
-Create src/main.c, cmake/arm-none-eabi-gcc.cmake, CMakeLists.txt initially
+Created src/main.c, cmake/arm-none-eabi-gcc.cmake, CMakeLists.txt initially
 
 ## Configure project
 
@@ -25,3 +25,16 @@ If configuration succeeds, CMake has found the compiler and generated the build 
 
 Run:
 cmake --build build
+
+## Add the linker script
+linker/STM32F411xx_FLASH.ld
+
+## Add startup file
+src/startup_stm32F411xx.c
+
+Run:
+rm -rf build
+
+cmake -S . -B build -G Ninja -DCMAKE_TOOLCHAIN_FILE="C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/cmake/arm-none-eabi-gcc.cmake"
+
+cmak --build build

@@ -1,3 +1,4 @@
 # ninja log v7
-4	115	8123510976879060	CMakeFiles/firmware_objects.dir/src/main.c.obj	73d89e9c6f93d43f
-1	12	8123511834463080	help	29d8b3481edbdde9
+8	71	8124057391607200	CMakeFiles/firmware.dir/src/main.c.obj	2a74354432876707
+3	73	8124057391557188	CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj	6cc1dc91ae9a59b
+73	200	8124057392257197	firmware	6d55d25177899500
