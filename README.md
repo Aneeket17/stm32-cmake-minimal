@@ -1,12 +1,12 @@
-## Minimal STM32 CMAKE Project
+# Minimal STM32 CMAKE Project
 
 This project is for sstting up a minimal flashable stm32 project
 
-## Steps followed for creation of the project
+# Steps followed for creation of the project
 
 Create src/main.c, cmake/arm-none-eabi-gcc.cmake, CMakeLists.txt initially
 
-# Configure project
+## Configure project
 
 Run:
 cmake -S . -B build `
@@ -21,7 +21,7 @@ The important options are:
 -DCMAKE_TOOLCHAIN_FILE=... tells CMake to use the Arm cross-compilation setup.
 If configuration succeeds, CMake has found the compiler and generated the build files.
 
-# Build the project
+## Build the project
 
 Run:
 cmake --build build
