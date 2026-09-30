@@ -1,4 +1,5 @@
 # ninja log v7
-11	85	8124750283859388	CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj	c018bd39880d4c86
-16	86	8124750283909248	CMakeFiles/firmware.dir/src/main.c.obj	8d7fe3e445c30e39
-86	242	8124750284609474	firmware.elf	69f8c07a454cb01e
+18	88	8124890701619957	CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj	c018bd39880d4c86
+23	100	8124890701660020	CMakeFiles/firmware.dir/src/main.c.obj	8d7fe3e445c30e39
+27	101	8124890701710066	CMakeFiles/firmware.dir/src/toggle_led.c.obj	d191fa2e63cf111a
+101	310	8124890702439373	firmware.elf	22a9d1b1f551b362

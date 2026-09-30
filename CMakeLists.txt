@@ -12,6 +12,7 @@ set(CMAKE_C_EXTENSIONS OFF)
 add_executable(firmware
     src/startup_stm32F411xx.c
     src/main.c
+    src/toggle_led.c
 )
 
 set_target_properties(firmware PROPERTIES

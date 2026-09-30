@@ -41,7 +41,7 @@ cmake --build build
 
 ## Flashing
 
-I am using openocd for flashing the code on my STMs2F411RE Nucleo board, which has ST-
+Use openocd for flashing the code on my STMs2F411RE Nucleo board, which has ST-
 LINK
 
 Run:
@@ -61,3 +61,9 @@ Use the -DCMAKE_BUILD_TYPE=Debug option with the cmake configuration command.
 Then build using cmake.
 
 [Debugging the flashed code](docs/images/debug_session_success.png)
+
+## Working Application
+
+Write register-level code to configure GPIO registers and then toggle the on-board LED connceted to PA5.
+
+Include the new .c file in CMakeLists.txt.

@@ -1,0 +1,20 @@
+[
+{
+  "directory": "C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/build",
+  "command": "C:\\PROGRA~2\\GNUARM~1\\102021~1.10\\bin\\AR19DD~1.EXE -DSTM32F411xx -g -std=c11 -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -o CMakeFiles\\firmware.dir\\src\\startup_stm32F411xx.c.obj -c C:\\Aniket\\embedded_sys\\stm32\\projects\\stm32_cmake_minimal\\src\\startup_stm32F411xx.c",
+  "file": "C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/src/startup_stm32F411xx.c",
+  "output": "C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/build/CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj"
+},
+{
+  "directory": "C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/build",
+  "command": "C:\\PROGRA~2\\GNUARM~1\\102021~1.10\\bin\\AR19DD~1.EXE -DSTM32F411xx -g -std=c11 -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -o CMakeFiles\\firmware.dir\\src\\main.c.obj -c C:\\Aniket\\embedded_sys\\stm32\\projects\\stm32_cmake_minimal\\src\\main.c",
+  "file": "C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/src/main.c",
+  "output": "C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/build/CMakeFiles/firmware.dir/src/main.c.obj"
+},
+{
+  "directory": "C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/build",
+  "command": "C:\\PROGRA~2\\GNUARM~1\\102021~1.10\\bin\\AR19DD~1.EXE -DSTM32F411xx -g -std=c11 -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -o CMakeFiles\\firmware.dir\\src\\toggle_led.c.obj -c C:\\Aniket\\embedded_sys\\stm32\\projects\\stm32_cmake_minimal\\src\\toggle_led.c",
+  "file": "C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/src/toggle_led.c",
+  "output": "C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/build/CMakeFiles/firmware.dir/src/toggle_led.c.obj"
+}
+]

@@ -46,6 +46,9 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/firmware.dir/src/main.c.obj
  .data          0x00000000        0x0 CMakeFiles/firmware.dir/src/main.c.obj
  .bss           0x00000000        0x0 CMakeFiles/firmware.dir/src/main.c.obj
+ .text          0x00000000        0x0 CMakeFiles/firmware.dir/src/toggle_led.c.obj
+ .data          0x00000000        0x0 CMakeFiles/firmware.dir/src/toggle_led.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/firmware.dir/src/toggle_led.c.obj
  .text          0x00000000        0x0 c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg.a(lib_a-exit.o)
  .data          0x00000000        0x0 c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg.a(lib_a-exit.o)
  .bss           0x00000000        0x0 c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg.a(lib_a-exit.o)
@@ -185,6 +188,7 @@ LOAD c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/
 LOAD c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
 LOAD CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
 LOAD CMakeFiles/firmware.dir/src/main.c.obj
+LOAD CMakeFiles/firmware.dir/src/toggle_led.c.obj
 START GROUP
 LOAD c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard\libgcc.a
 LOAD c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg.a
@@ -203,7 +207,7 @@ LOAD c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/
                 0x08000000                vector_table
                 0x08000010                . = ALIGN (0x4)
 
-.text           0x08000010       0xa8
+.text           0x08000010      0x100
                 0x08000010                . = ALIGN (0x4)
  *(.text)
  *(.text*)
@@ -215,79 +219,75 @@ LOAD c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/
                 0x0800006c                NMI_Handler
                 0x0800006c                Default_Handler
                 0x0800006c                HardFault_Handler
- *fill*         0x08000072        0x2 
- .text.main     0x08000074       0x2c CMakeFiles/firmware.dir/src/main.c.obj
-                0x08000074                main
+ .text.main     0x08000072        0xe CMakeFiles/firmware.dir/src/main.c.obj
+                0x08000072                main
+ .text.toggle   0x08000080       0x78 CMakeFiles/firmware.dir/src/toggle_led.c.obj
+                0x08000080                toggle
  *(.glue_7)
- .glue_7        0x080000a0        0x0 linker stubs
+ .glue_7        0x080000f8        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080000a0        0x0 linker stubs
+ .glue_7t       0x080000f8        0x0 linker stubs
  *(.eh_frame)
  *(.init)
- .init          0x080000a0        0x4 c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080000a0                _init
- .init          0x080000a4        0x8 c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x080000f8        0x4 c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x080000f8                _init
+ .init          0x080000fc        0x8 c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x080000ac        0x4 c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080000ac                _fini
- .fini          0x080000b0        0x8 c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x080000b8                . = ALIGN (0x4)
-                0x080000b8                _etext = .
+ .fini          0x08000104        0x4 c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08000104                _fini
+ .fini          0x08000108        0x8 c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08000110                . = ALIGN (0x4)
+                0x08000110                _etext = .
 
-.vfp11_veneer   0x080000b8        0x0
- .vfp11_veneer  0x080000b8        0x0 linker stubs
+.vfp11_veneer   0x08000110        0x0
+ .vfp11_veneer  0x08000110        0x0 linker stubs
 
-.v4_bx          0x080000b8        0x0
- .v4_bx         0x080000b8        0x0 linker stubs
+.v4_bx          0x08000110        0x0
+ .v4_bx         0x08000110        0x0 linker stubs
 
-.iplt           0x080000b8        0x0
- .iplt          0x080000b8        0x0 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
+.iplt           0x08000110        0x0
+ .iplt          0x08000110        0x0 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
 
-.rel.dyn        0x080000b8        0x0
- .rel.iplt      0x080000b8        0x0 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
+.rel.dyn        0x08000110        0x0
+ .rel.iplt      0x08000110        0x0 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
 
-.rodata         0x080000b8        0x0
-                0x080000b8                . = ALIGN (0x4)
+.rodata         0x08000110        0x0
+                0x08000110                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
-                0x080000b8                . = ALIGN (0x4)
-                0x080000b8                _sidata = LOADADDR (.data)
+                0x08000110                . = ALIGN (0x4)
+                0x08000110                _sidata = LOADADDR (.data)
 
-.data           0x20000000        0x4 load address 0x080000b8
+.data           0x20000000        0x0 load address 0x08000110
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
  *(.data*)
- .data.some_number
-                0x20000000        0x4 CMakeFiles/firmware.dir/src/main.c.obj
-                0x20000004                . = ALIGN (0x4)
-                0x20000004                _edata = .
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _edata = .
 
-.igot.plt       0x20000004        0x0 load address 0x080000bc
- .igot.plt      0x20000004        0x0 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
+.igot.plt       0x20000000        0x0 load address 0x08000110
+ .igot.plt      0x20000000        0x0 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
 
-.bss            0x20000004        0x4 load address 0x080000bc
-                0x20000004                . = ALIGN (0x4)
-                0x20000004                _sbss = .
+.bss            0x20000000        0x0 load address 0x08000110
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _sbss = .
  *(.bss)
  *(.bss*)
- .bss.placeholder_counter
-                0x20000004        0x4 CMakeFiles/firmware.dir/src/main.c.obj
-                0x20000004                placeholder_counter
  *(COMMON)
-                0x20000008                . = ALIGN (0x4)
-                0x20000008                _ebss = .
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _ebss = .
 
 ._user_heap_stack
-                0x20000008      0x600 load address 0x080000bc
-                0x20000008                . = ALIGN (0x8)
+                0x20000000      0x600 load address 0x08000110
+                0x20000000                . = ALIGN (0x8)
                 [!provide]                PROVIDE (end = .)
                 [!provide]                PROVIDE (_end = .)
-                0x20000208                . = (. + _Min_Heap_Size)
- *fill*         0x20000008      0x200 
-                0x20000608                . = (. + _Min_Stack_Size)
- *fill*         0x20000208      0x400 
-                0x20000608                . = ALIGN (0x8)
+                0x20000200                . = (. + _Min_Heap_Size)
+ *fill*         0x20000000      0x200 
+                0x20000600                . = (. + _Min_Stack_Size)
+ *fill*         0x20000200      0x400 
+                0x20000600                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -308,41 +308,53 @@ LOAD c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/
  .ARM.attributes
                 0x00000052       0x34 CMakeFiles/firmware.dir/src/main.c.obj
  .ARM.attributes
-                0x00000086       0x1e c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x00000086       0x34 CMakeFiles/firmware.dir/src/toggle_led.c.obj
+ .ARM.attributes
+                0x000000ba       0x1e c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
 
 .comment        0x00000000       0x49
  .comment       0x00000000       0x49 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
                                  0x4a (size before relaxing)
  .comment       0x00000049       0x4a CMakeFiles/firmware.dir/src/main.c.obj
+ .comment       0x00000049       0x4a CMakeFiles/firmware.dir/src/toggle_led.c.obj
 
-.debug_info     0x00000000      0x240
+.debug_info     0x00000000      0x2b4
  .debug_info    0x00000000      0x17d CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
- .debug_info    0x0000017d       0xc3 CMakeFiles/firmware.dir/src/main.c.obj
+ .debug_info    0x0000017d       0x82 CMakeFiles/firmware.dir/src/main.c.obj
+ .debug_info    0x000001ff       0xb5 CMakeFiles/firmware.dir/src/toggle_led.c.obj
 
-.debug_abbrev   0x00000000      0x15b
+.debug_abbrev   0x00000000      0x195
  .debug_abbrev  0x00000000       0xdb CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
- .debug_abbrev  0x000000db       0x80 CMakeFiles/firmware.dir/src/main.c.obj
+ .debug_abbrev  0x000000db       0x46 CMakeFiles/firmware.dir/src/main.c.obj
+ .debug_abbrev  0x00000121       0x74 CMakeFiles/firmware.dir/src/toggle_led.c.obj
 
-.debug_aranges  0x00000000       0x48
+.debug_aranges  0x00000000       0x68
  .debug_aranges
                 0x00000000       0x28 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
  .debug_aranges
                 0x00000028       0x20 CMakeFiles/firmware.dir/src/main.c.obj
+ .debug_aranges
+                0x00000048       0x20 CMakeFiles/firmware.dir/src/toggle_led.c.obj
 
-.debug_ranges   0x00000000       0x28
+.debug_ranges   0x00000000       0x38
  .debug_ranges  0x00000000       0x18 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
  .debug_ranges  0x00000018       0x10 CMakeFiles/firmware.dir/src/main.c.obj
+ .debug_ranges  0x00000028       0x10 CMakeFiles/firmware.dir/src/toggle_led.c.obj
 
-.debug_line     0x00000000      0x288
+.debug_line     0x00000000      0x324
  .debug_line    0x00000000      0x167 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
- .debug_line    0x00000167      0x121 CMakeFiles/firmware.dir/src/main.c.obj
+ .debug_line    0x00000167       0x7c CMakeFiles/firmware.dir/src/main.c.obj
+ .debug_line    0x000001e3      0x141 CMakeFiles/firmware.dir/src/toggle_led.c.obj
 
-.debug_str      0x00000000      0x2b3
+.debug_str      0x00000000      0x2eb
  .debug_str     0x00000000      0x249 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
                                 0x286 (size before relaxing)
- .debug_str     0x00000249       0x6a CMakeFiles/firmware.dir/src/main.c.obj
-                                0x1e2 (size before relaxing)
+ .debug_str     0x00000249       0x4a CMakeFiles/firmware.dir/src/main.c.obj
+                                0x1ae (size before relaxing)
+ .debug_str     0x00000293       0x58 CMakeFiles/firmware.dir/src/toggle_led.c.obj
+                                0x1d0 (size before relaxing)
 
-.debug_frame    0x00000000       0x70
+.debug_frame    0x00000000       0xa0
  .debug_frame   0x00000000       0x48 CMakeFiles/firmware.dir/src/startup_stm32F411xx.c.obj
- .debug_frame   0x00000048       0x28 CMakeFiles/firmware.dir/src/main.c.obj
+ .debug_frame   0x00000048       0x2c CMakeFiles/firmware.dir/src/main.c.obj
+ .debug_frame   0x00000074       0x2c CMakeFiles/firmware.dir/src/toggle_led.c.obj
