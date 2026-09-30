@@ -14,6 +14,10 @@ add_executable(firmware
     src/main.c
 )
 
+set_target_properties(firmware PROPERTIES
+    OUTPUT_NAME "firmware.elf"
+)
+
 target_compile_options(firmware PRIVATE
     -mcpu=cortex-m4
     -mthumb
@@ -42,4 +46,6 @@ target_link_options(firmware PRIVATE
 
 add_custom_command(TARGET firmware POST_BUILD
     COMMAND ${CMAKE_SIZE} $<TARGET_FILE:firmware>
+    COMMAND ${CMAKE_OBJCOPY} -O binary $<TARGET_FILE:firmware> ${CMAKE_BINARY_DIR}/firmware.bin
+    COMMAND ${CMAKE_OBJCOPY} -O ihex $<TARGET_FILE:firmware> ${CMAKE_BINARY_DIR}/firmware.hex
 )

@@ -37,4 +37,27 @@ rm -rf build
 
 cmake -S . -B build -G Ninja -DCMAKE_TOOLCHAIN_FILE="C:/Aniket/embedded_sys/stm32/projects/stm32_cmake_minimal/cmake/arm-none-eabi-gcc.cmake"
 
-cmak --build build
+cmake --build build
+
+## Flashing
+
+I am using openocd for flashing the code on my STMs2F411RE Nucleo board, which has ST-
+LINK
+
+Run:
+openocd -f interface/stlink.cfg -f target/stm32f4x.cfg -c "program build/firmware.elf verify reset exit"
+
+A successful flash has something like this in the output:
+** Programming Started **
+** Programming Finished **
+** Verify Started **
+** Verified OK **
+** Resetting Target **
+shutdown command invoked
+
+## Debugging
+
+Use the -DCMAKE_BUILD_TYPE=Debug option with the cmake configuration command.
+Then build using cmake.
+
+[Debugging the flashed code](docs/images/debug_session_success.png)
